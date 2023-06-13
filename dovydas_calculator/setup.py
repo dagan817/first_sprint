@@ -10,10 +10,10 @@ setup(
         ]
     },
     install_requires=[],
-    author='Your Name',
-    description='A simple calculator by Dovydas',
+    author='Dovydas A',
+    description='A simple calculator by Dovydas A',
     long_description='A simple calculator program with basic arithmetic operations.',
-    url='https://github.com/yourusername/dovydas_calculator',
+    url='https://github.com/dagan817/first_sprint/tree/main/calculator',
     classifiers=[
         'License :: OSI Approved :: MIT License',
         'Programming Language :: Python :: 3',
