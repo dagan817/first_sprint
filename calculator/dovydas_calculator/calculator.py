@@ -59,7 +59,7 @@ def main():
         choice = input("Enter choice (1-9): ")
 
         if choice == "9":
-            print("Exiting dovydas_calculator...")
+            print("Exiting the best calculator yet created by Dovydas...")
             break
 
         if choice not in ["5", "6", "7", "8"]:
