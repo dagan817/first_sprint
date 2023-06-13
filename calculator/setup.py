@@ -6,15 +6,17 @@ setup(
     packages=find_packages(),
     entry_points={
         'console_scripts': [
-            'dovydas_calculator = dovydas_calculator.calculator:main',
-        ],
+            'dovydas_calculator = calculator.calculator:main'
+        ]
     },
-    install_requires=[
-        'pytest',
-    ],
+    install_requires=[],
+    author='Your Name',
+    description='A simple calculator by Dovydas',
+    long_description='A simple calculator program with basic arithmetic operations.',
+    url='https://github.com/yourusername/dovydas_calculator',
     classifiers=[
-        'Programming Language :: Python :: 3',
         'License :: OSI Approved :: MIT License',
+        'Programming Language :: Python :: 3',
         'Operating System :: OS Independent',
     ],
 )
