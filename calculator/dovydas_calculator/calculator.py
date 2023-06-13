@@ -42,7 +42,7 @@ calculator = Calculator()
 
 
 def main():
-    print("Welcome to the dovydas_calculator!")
+    print("Welcome to the Calculator by Dovydas!")
 
     while True:
         print("Select operation:")
