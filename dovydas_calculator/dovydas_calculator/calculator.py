@@ -45,6 +45,10 @@ class Calculator:
         """Reset the calculator's memory to 0"""
         self.memory = 0
 
+    def store_result(self, result):
+        """Store the result in memory"""
+        self.memory = result
+
 
 calculator = Calculator()
 
@@ -59,53 +63,72 @@ def main():
         print("3. Multiply")
         print("4. Divide")
         print("5. Take nth root")
-        print("6. Store to Memory")
-        print("7. Recall Memory")
-        print("8. Clear Memory")
-        print("9. Exit")
+        print("6. Recall Memory")
+        print("7. Clear Memory")
+        print("8. Exit")
 
-        choice = input("Enter choice (1-9): ")
+        choice = input("Enter choice (1-8): ")
 
-        if choice == "9":
+        if choice == "8":
             print("Exiting the best calculator yet created by Dovydas...")
             break
 
-        if choice not in ["5", "6", "7", "8"]:
+        if choice not in ["6", "7"]:
             try:
-                num1 = float(input("Enter first number: "))
-                num2 = float(input("Enter second number: "))
+                if calculator.recall_memory() != 0:
+                    num1 = calculator.recall_memory()
+                else:
+                    num1 = float(input("Enter first number: "))
+
+                if choice != "5":
+                    num2 = float(input("Enter second number: "))
             except ValueError:
                 print("Error: Invalid input! Please enter a valid number.")
                 continue
 
         if choice == "1":
-            print("Result:", add(num1, num2))
+            # Perform addition
+            result = add(num1, num2)
+            print("Result:", result)
+            calculator.store_result(result)
         elif choice == "2":
-            print("Result:", subtract(num1, num2))
+            # Perform subtraction
+            result = subtract(num1, num2)
+            print("Result:", result)
+            calculator.store_result(result)
         elif choice == "3":
-            print("Result:", multiply(num1, num2))
+            # Perform multiplication
+            result = multiply(num1, num2)
+            print("Result:", result)
+            calculator.store_result(result)
         elif choice == "4":
             if num2 != 0:
-                print("Result:", divide(num1, num2))
+                # Perform division if the divisor is not zero
+                result = divide(num1, num2)
+                print("Result:", result)
+                calculator.store_result(result)
             else:
                 print("Error: Division by zero")
         elif choice == "5":
             try:
-                x = float(input("Enter the number: "))
+                if calculator.recall_memory() != 0:
+                    # Use the stored value as the first number for nth root
+                    x = calculator.recall_memory()
+                else:
+                    x = float(input("Enter the number: "))
+
                 n = int(input("Enter the root value: "))
-                print("Result:", nth_root(x, n))
+                # Calculate the nth root
+                result = nth_root(x, n)
+                print("Result:", result)
+                calculator.store_result(result)
             except ValueError:
                 print("Error: Invalid input! Please enter a valid number.")
         elif choice == "6":
-            try:
-                value = float(input("Enter value to store: "))
-                calculator.add_to_memory(value)
-                print("Value stored to memory.")
-            except ValueError:
-                print("Error: Invalid input! Please enter a valid number.")
-        elif choice == "7":
+            # Recall the value from memory
             print("Memory:", calculator.recall_memory())
-        elif choice == "8":
+        elif choice == "7":
+            # Clear the memory
             calculator.clear_memory()
             print("Memory cleared.")
         else:
