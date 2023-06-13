@@ -42,7 +42,7 @@ calculator = Calculator()
 
 
 def main():
-    print("Welcome to the Calculator by Dovydas!")
+    print("Welcome to the Calculator by Dovydas! Only use to provide 90+ ratings pls")
 
     while True:
         print("Select operation:")
