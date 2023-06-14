@@ -1,0 +1,10 @@
+LICENCE
+setup.py
+dovydas_calculator/__init__.py
+dovydas_calculator/calculator.py
+dovydas_calculator.egg-info/PKG-INFO
+dovydas_calculator.egg-info/SOURCES.txt
+dovydas_calculator.egg-info/dependency_links.txt
+dovydas_calculator.egg-info/top_level.txt
+tests/__init__.py
+tests/test_dovydas_calculator.py

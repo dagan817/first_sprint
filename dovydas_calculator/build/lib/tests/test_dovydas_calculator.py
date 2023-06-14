@@ -11,7 +11,6 @@ def test_addition():
 def test_subtraction():
     result = subtract(5, 3)
     assertion = result == 2
-    print("Result:", result, "assertion", assertion)
     assert assertion
 
 
@@ -85,7 +84,7 @@ def test_calculator_subtract_operation():
     calculator.add_to_memory(5)
     result = subtract(calculator.recall_memory(), 3)
     calculator.store_result(result)
-    assertion = calculator.recall_memory() == 12
+    assertion = calculator.recall_memory() == 2
     assert assertion
 
 
@@ -95,7 +94,7 @@ def test_calculator_multiply_operation():
     calculator.add_to_memory(3)
     result = multiply(calculator.recall_memory(), 4)
     calculator.store_result(result)
-    assertion = calculator.recall_memory() == 20
+    assertion = calculator.recall_memory() == 24
     assert assertion
 
 
@@ -105,7 +104,7 @@ def test_calculator_divide_operation():
     calculator.add_to_memory(4)
     result = divide(calculator.recall_memory(), 2)
     calculator.store_result(result)
-    assertion = calculator.recall_memory() == 12
+    assertion = calculator.recall_memory() == 10
     assert assertion
 
 
